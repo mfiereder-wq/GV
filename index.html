@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <style>
+    /* Cookie Banner Styles */
+    #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1e88e5;
+        color: white;
+        padding: 20px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+    }
+
+    .cookie-buttons {
+        margin-top: 10px;
+    }
+
+    .cookie-button {
+        background-color: #0d47a1;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .cookie-button:hover {
+        background-color: #1565c0;
+    }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genossenschaft Vermittler Zürich – Günstige Wohnungen finden</title>
@@ -565,6 +600,42 @@
     <script src="https://js.stripe.com/v3/"></script>
     <!-- Das Buy Button Skript, wie gewünscht -->
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+<!-- Cookie-Banner -->
+<div id="cookie-banner">
+    <p>Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. 
+       Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies zu.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-button" onclick="acceptCookies()">Akzeptieren</button>
+        <button class="cookie-button" onclick="declineCookies()">Ablehnen</button>
+    </div>
+</div>
+    <script>
+    function acceptCookies() {
+        document.cookie = "cookie-accepted=true; max-age=" + (60*60*24*365) + "; path=/";
+        hideCookieBanner();
+    }
 
+    function declineCookies() {
+        document.cookie = "cookie-accepted=false; max-age=" + (60*60*24*365) + "; path=/";
+        hideCookieBanner();
+    }
+
+    function hideCookieBanner() {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function checkCookiePreference() {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            if (cookie.includes('cookie-accepted')) {
+                hideCookieBanner();
+                break;
+            }
+        }
+    }
+
+    window.onload = checkCookiePreference;
+</script>
+    
 </body>
 </html>
