@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Genossenschaft Vermittler Zürich</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; color: #1f2937; }
+        h1 { border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        h2 { margin-top: 2rem; margin-bottom: 1rem; color: #1d4ed8; }
+        .content-card { min-height: 70vh; }
+        /* Stil für den separaten Datenschutzlink, damit der Anker funktioniert */
+        #datenschutzhinweis { padding-top: 6rem; margin-top: -6rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Angepasst an die Hauptseite) -->
+    <header class="bg-white shadow-lg">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Link zur Hauptseite (index.html, korrekt relativ zum Unterordner) -->
+            <a href="../index.html" class="flex items-center">
+                <img src="https://i.ibb.co/8kTQ8XK/Genossenschaft-Vermittler-20251104-142854-0000.png" 
+                     alt="Genossenschaft Vermittler Logo" 
+                     class="h-10 w-auto" loading="lazy">
+            </a>
+            <!-- Link zur Hauptseite (index.html, korrekt relativ zum Unterordner) -->
+            <a href="../index.html#pricing" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition duration-300 shadow-md">
+                Zurück zur Hauptseite
+            </a>
+        </nav>
+    </header>
+
+    <!-- Inhalt des Impressums -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white p-8 sm:p-10 rounded-2xl shadow-xl content-card border border-gray-200">
+
+            <h1 class="text-3xl font-bold text-gray-900">Impressum (Rechtliche Hinweise)</h1>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold">Angaben und Kontakt (Art. 2 DSG und VOSI)</h2>
+
+                <div class="space-y-3 text-gray-700">
+                    <p><span class="font-bold">Verantwortliche Stelle / Anbieter:</span> Genossenschaft Vermittler</p>
+                    <p><span class="font-bold">Adresse:</span> Nossikerstrasse 13, 8610 Uster, Schweiz</p>
+                    <p><span class="font-bold">Vertretung (Geschäftsführung/Verwaltung):</span> Lorenz Weihermann</p>
+                    <p><span class="font-bold">Kontakt:</span> E-Mail: gv-wohnungen@gmail.com</p>
+                    <p class="text-sm text-gray-500">(Bitte fügen Sie hier ggf. Ihre UID/CHE-Nummer ein, falls im Handelsregister eingetragen)</p>
+                </div>
+            </section>
+
+            <hr class="my-8 border-gray-200">
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold">Haftungsausschluss</h2>
+
+                <h3 class="text-xl font-medium mt-4 mb-2">Inhalt des Onlineangebotes:</h3>
+                <p class="text-gray-700">Die Genossenschaft Vermittler übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen die Genossenschaft Vermittler, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen.</p>
+
+                <h3 class="text-xl font-medium mt-4 mb-2">Externe Links:</h3>
+                <p class="text-gray-700">Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+            </section>
+
+            <hr class="my-8 border-gray-200">
+
+            <section class="mb-8" id="datenschutzhinweis">
+                <h2 class="text-2xl font-semibold">Datenschutzhinweis (Kurzfassung)</h2>
+
+                <p class="text-gray-700 mb-4">Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen im Rahmen des Abonnements) erhoben werden, erfolgt dies stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+                
+                <p class="text-gray-700 mb-4">Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+
+                <h3 class="text-xl font-medium mt-4 mb-2">Zahlungsdienstleister (Stripe):</h3>
+                <p class="text-gray-700">Wir verwenden den Zahlungsdienstleister Stripe zur Abwicklung der Zahlungen. Ihre Zahlungsdaten werden direkt an Stripe übermittelt und dort verarbeitet. Wir speichern keine vollständigen Zahlungsdaten auf unseren Servern. Es gelten die Datenschutzbestimmungen von Stripe.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer (Angepasst an die Hauptseite) -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Link zu sich selbst: Wenn die URL /impressum/ aufgerufen wird, zeigt sie auf index.html im aktuellen Ordner. -->
+            <p class="text-sm text-gray-500">&copy; 2025 Genossenschaft Vermittler Zürich. Alle Rechte vorbehalten. | <a href="./" class="hover:text-blue-400 transition">Impressum & Datenschutz</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
