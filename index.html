@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genossenschaft Vermittler Zürich – Günstige Wohnungen finden</title>
+    
+    <!-- NEUE METABESCHREIBUNG FÜR GOOGLE -->
+    <meta name="description" content="Sparen Sie bei der Miete! Wir finden die besten, günstigen Genossenschaftswohnungen in Zürich für Sie. Erhalten Sie monatlich kuratierte Inserate und Direktlinks.">
+    
+    <!-- FAVICON AKTUALISIERT -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/8kTQ8XK/Genossenschaft-Vermittler-20251104-142854-0000.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basis-Font für die gesamte Seite */
+        body { font-family: 'Inter', sans-serif; }
+        /* Schatten für den Hero-Text, damit er auf dem Hintergrundbild besser lesbar ist */
+        .hero-text-shadow { text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+        /* Hintergrundbild für den Hero-Bereich */
+        .hero-background-image {
+            background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover; background-position: center;
+        }
+        /* Animation für das Vertrauens-Badge */
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+        .trust-badge { animation: pulse 2s infinite; }
+        /* Hover-Effekt für die Inserate-Bilder */
+        .inserat-image {
+            transition: transform 0.3s ease;
+        }
+        .inserat:hover .inserat-image {
+            transform: scale(1.03);
+        }
+        
+        /* Custom styles für FAQ-Elemente */
+        .faq-item details[open] summary {
+            border-bottom: 1px solid #d1d5db; /* Trennlinie, wenn geöffnet */
+        }
+        .faq-item details[open] .chevron {
+            transform: rotate(180deg);
+        }
+        .chevron {
+            transition: transform 0.3s;
+        }
+
+        /* Erzwingt volle Breite für den eingebetteten Buy Button */
+        stripe-buy-button { 
+            display: block; 
+            width: 100%; 
+            max-width: 100%; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+    <!-- Header (Sticky, mobile-optimiert) -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- LOGO ALS BILD (HÖHE WURDE AUF h-10 UND sm:h-12 VERGRÖSSERT) -->
+                <div class="flex-shrink-0">
+                    <img src="https://i.ibb.co/8kTQ8XK/Genossenschaft-Vermittler-20251104-142854-0000.png" 
+                         alt="Genossenschaft Vermittler Logo" 
+                         class="h-10 sm:h-12 w-auto" loading="lazy">
+                </div>
+                
+                <!-- Desktop Navigation (ab md) -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#features" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Vorteile</a>
+                        <a href="#testimonials" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Erfahrungen</a>
+                        <a href="#preview" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Vorschau</a>
+                        <!-- CTA-Link ersetzt durch Klick-Event -->
+                        <a href="#pricing" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition duration-300 shadow-md">Jetzt abonnieren</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile CTA (nur auf kleinen Bildschirmen) -->
+                <div class="md:hidden">
+                    <a href="#pricing" class="bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition duration-300 shadow-md">Abo starten</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero (Mobile: mehr vertikaler Fokus) -->
+    <div class="relative bg-gray-900 overflow-hidden hero-background-image">
+        <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+        <!-- Anpassung der Polsterung und Mindesthöhe für bessere mobile Darstellung -->
+        <div class="relative max-w-6xl mx-auto text-center py-16 px-4 sm:py-24 sm:px-6 lg:py-32 lg:px-8 z-20 flex flex-col justify-center items-center min-h-[50vh] md:min-h-[70vh]">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight hero-text-shadow">
+                <span class="block">Günstige Genossenschafts-</span>
+                <span class="block text-blue-300 mt-2">Wohnungen in Zürich finden.</span>
+            </h1>
+            <!-- Textgröße für mobile Geräte optimiert -->
+            <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-200 hero-text-shadow px-2">
+                Wir durchsuchen für Sie die Angebote der Zürcher Genossenschaften. Erhalten Sie monatlich eine E-Mail mit den neusten, günstigen Inseraten.
+            </p>
+            <!-- Badges auf Mobilgeräten etwas kompakter -->
+            <div class="mt-6 flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
+                <div class="bg-white bg-opacity-20 text-white px-3 py-1.5 rounded-full font-medium">✅ 100% Datenschutz</div>
+                <div class="bg-white bg-opacity-20 text-white px-3 py-1.5 rounded-full font-medium">🔒 SSL Verschlüsselung</div>
+                <div class="bg-white bg-opacity-20 text-white px-3 py-1.5 rounded-full font-medium">💳 Sichere Bezahlung</div>
+            </div>
+            <div class="mt-8">
+                <!-- CTA-Größe beibehalten, aber auf mobile Geräten gut sichtbar -->
+                <a href="#pricing" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-xl text-lg hover:bg-blue-700 transition duration-300 shadow-xl transform hover:scale-[1.02] active:scale-[0.98]">
+                    Jetzt abonnieren
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vorteile -->
+    <section id="features" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Warum unser Service?</h2>
+                <p class="mt-3 text-base sm:text-lg text-gray-600">Wir machen die Wohnungssuche in Zürich einfacher und effizienter</p>
+            </div>
+            
+            <!-- Features-Grid: Stacking auf Mobile, 3 Spalten auf Desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⏱️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Zeitersparnis</h3>
+                    <p class="text-gray-600">Wir durchsuchen täglich die Angebote aller Zürcher Genossenschaften und sparen Ihnen so Stunden an Recherche.</p>
+                </div>
+                
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🔍</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Frühe Benachrichtigung</h3>
+                    <p class="text-gray-600">Erhalten Sie Inserate oft schon bevor sie öffentlich veröffentlicht werden und erhöhen Sie Ihre Chancen.</p>
+                </div>
+                
+                <div class="text-center p-4">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Günstige Preise</h3>
+                    <p class="text-gray-600">Wir filtern gezielt nach erschwinglichen Wohnungen, die sonst im teuren Zürcher Markt schwer zu finden sind.</p>
+                </div>
+            </div>
+            
+            <!-- So funktioniert's Block: Mobile-Layout optimiert -->
+            <div class="mt-12 sm:mt-16 bg-blue-50 rounded-2xl p-6 md:p-10">
+                <!-- Flex-Container, der auf Mobile zu Column wird -->
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-5">So funktioniert's</h3>
+                        <ul class="space-y-4 text-gray-800">
+                            <li class="flex items-start">
+                                <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5 text-sm font-semibold">1</span>
+                                <span>Wählen Sie Ihr Abo und bezahlen Sie sicher online</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5 text-sm font-semibold">2</span>
+                                <span>Erhalten Sie monatlich eine E-Mail mit den neusten, passenden Wohnungsinseraten</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5 text-sm font-semibold">3</span>
+                                <span>Bewerben Sie sich direkt mit den bereitgestellten Links und Kontaktdaten</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Beispiel-E-Mail Block -->
+                    <div class="md:w-1/2 w-full">
+                        <div class="bg-white p-6 rounded-xl shadow-lg border border-blue-200">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-xl">📧</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Beispiel-E-Mail</h4>
+                                    <p class="text-sm text-gray-500">Monatliche Zusammenstellung</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm sm:text-base">
+                                    <span>3.5-Zimmer in Oerlikon</span>
+                                    <span class="font-bold text-blue-600">CHF 1'680.-</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm sm:text-base">
+                                    <span>4.5-Zimmer in Altstetten</span>
+                                    <span class="font-bold text-blue-600">CHF 1'940.-</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm sm:text-base">
+                                    <span>2.5-Zimmer in Seebach</span>
+                                    <span class="font-bold text-blue-600">CHF 1'320.-</span>
+                                </div>
+                                <div class="pt-3 border-t border-gray-200 mt-3">
+                                    <span class="text-xs text-gray-500 font-medium">✨ Mit Direktlinks zu den Genossenschaften</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEUE SECTION: Vorschau-Inserate (Mobile-Optimierung: Einzelspalte) -->
+    <section id="preview" class="py-16 sm:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">So sehen Ihre Inserate aus</h2>
+                <p class="mt-3 text-base sm:text-lg text-gray-600">Monatlich kuratiert – hier 4 echte Beispiele aus November 2025</p>
+            </div>
+
+            <!-- Inserate-Grid: Standard 1 Spalte (Mobile), 2 Spalten (Tablet), 4 Spalten (Desktop) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Inserat 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition inserat border border-gray-200">
+                    <div class="overflow-hidden">
+                        <!--  -->
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wohnung Oerlikon" class="w-full h-48 object-cover inserat-image">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-bold text-blue-600 uppercase">ABF</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">ab 1. Feb 2026</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900">3.5-Zimmer • 82 m²</h3>
+                        <p class="text-gray-600 text-sm mt-1">Leutschenbachstrasse 42, 8050 Zürich</p>
+                        <div class="flex items-center mt-2 text-sm text-gray-500 flex-wrap">
+                            <span class="mr-3 mb-1">🏙️ Oerlikon</span>
+                            <span class="mb-1">🚉 5 min zum Bahnhof</span>
+                        </div>
+                        <p class="text-3xl font-extrabold text-blue-700 mt-3">CHF 1'680.–</p>
+                        <p class="text-xs text-gray-500 mt-2">Balkon, Keller, Lift, Kinder willkommen</p>
+                        <a href="#pricing" class="block mt-4 text-center bg-blue-600 text-white py-3 rounded-xl text-base font-semibold hover:bg-blue-700 transition shadow-md">
+                            Jetzt abonnieren & bewerben
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inserat 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition inserat border border-gray-200">
+                    <div class="overflow-hidden">
+                        <!--  -->
+                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wohnung Altstetten" class="w-full h-48 object-cover inserat-image">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-bold text-blue-600 uppercase">Kraft</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">sofort</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900">4.5-Zimmer • 98 m²</h3>
+                        <p class="text-gray-600 text-sm mt-1">Hohlstrasse 600, 8048 Zürich</p>
+                        <div class="flex items-center mt-2 text-sm text-gray-500 flex-wrap">
+                            <span class="mr-3 mb-1">🏘️ Altstetten</span>
+                            <span class="mb-1">🚉 7 min zum Bahnhof</span>
+                        </div>
+                        <p class="text-3xl font-extrabold text-blue-700 mt-3">CHF 1'940.–</p>
+                        <p class="text-xs text-gray-500 mt-2">Grosse Loggia, Einstellhalle +150.–</p>
+                        <a href="#pricing" class="block mt-4 text-center bg-blue-600 text-white py-3 rounded-xl text-base font-semibold hover:bg-blue-700 transition shadow-md">
+                            Jetzt abonnieren & bewerben
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inserat 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition inserat border border-gray-200">
+                    <div class="overflow-hidden">
+                        <!--  -->
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wohnung Seebach" class="w-full h-48 object-cover inserat-image">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-bold text-blue-600 uppercase">Allg. Baugenossenschaft</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">ab 1. Jan 2026</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900">2.5-Zimmer • 61 m²</h3>
+                        <p class="text-gray-600 text-sm mt-1">Rütiweg 12, 8052 Zürich</p>
+                        <div class="flex items-center mt-2 text-sm text-gray-500 flex-wrap">
+                            <span class="mr-3 mb-1">🌳 Seebach</span>
+                            <span class="mb-1">🚉 10 min zum Bahnhof</span>
+                        </div>
+                        <p class="text-3xl font-extrabold text-blue-700 mt-3">CHF 1'320.–</p>
+                        <p class="text-xs text-gray-500 mt-2">Sonniger Südbalkon, Waschturm</p>
+                        <a href="#pricing" class="block mt-4 text-center bg-blue-600 text-white py-3 rounded-xl text-base font-semibold hover:bg-blue-700 transition shadow-md">
+                            Jetzt abonnieren & bewerben
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inserat 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition inserat border border-gray-200">
+                    <div class="overflow-hidden">
+                        <!--  -->
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wohnung Wipkingen" class="w-full h-48 object-cover inserat-image">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-bold text-blue-600 uppercase">Wogeno</span>
+                            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded-full font-medium">Neubau</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900">5.5-Zimmer • 115 m²</h3>
+                        <p class="text-gray-600 text-sm mt-1">Nordstrasse 210, 8037 Zürich</p>
+                        <div class="flex items-center mt-2 text-sm text-gray-500 flex-wrap">
+                            <span class="mr-3 mb-1">🏡 Wipkingen</span>
+                            <span class="mb-1">🚉 8 min zum Bahnhof</span>
+                        </div>
+                        <p class="text-3xl font-extrabold text-blue-700 mt-3">CHF 2'250.–</p>
+                        <p class="text-xs text-gray-500 mt-2">Dachterrasse, Minergie, Spielplatz</p>
+                        <a href="#pricing" class="block mt-4 text-center bg-blue-600 text-white py-3 rounded-xl text-base font-semibold hover:bg-blue-700 transition shadow-md">
+                            Jetzt abonnieren & bewerben
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 sm:mt-16">
+                <p class="text-sm text-gray-500 max-w-lg mx-auto">
+                    ⚡ Diese Inserate sind Beispiele. Abonnenten erhalten <strong>echte Direktlinks</strong> per E-Mail – oft <24 h online!
+                </p>
+                <a href="#pricing" class="inline-block mt-6 bg-blue-600 text-white font-bold py-3 px-8 rounded-xl text-lg hover:bg-blue-700 transition duration-300 shadow-xl transform hover:scale-[1.02] active:scale-[0.98]">
+                    Monats-Abo für CHF 9.90 starten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Mobile-Optimierung: Stacking) -->
+    <section id="testimonials" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Erfahrungen unserer Kunden</h2>
+                <p class="mt-3 text-base sm:text-lg text-gray-600">Was unsere Abonnenten über unseren Service sagen</p>
+            </div>
+            
+            <!-- Testimonial Grid: Stacking auf Mobile, 3 Spalten auf Desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-bold text-lg">MK</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Markus K.</h4>
+                            <div class="flex text-yellow-500 text-lg">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-base">"Endlich eine Wohnung in Zürich gefunden! Der Service hat mir so viel Zeit gespart. Nach 3 Monaten Abo hatte ich meine 3.5-Zimmer-Wohnung in Oerlikon."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-bold text-lg">SL</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sara L.</h4>
+                            <div class="flex text-yellow-500 text-lg">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-base">"Die Inserate sind immer aktuell und genau das, was ich gesucht habe: günstige Genossenschaftswohnungen. Es lohnt sich!"</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-bold text-lg">RT</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Rolf T.</h4>
+                            <div class="flex text-yellow-500 text-lg">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-base">"Die Filterung ist perfekt. Man bekommt wirklich nur die relevanten, günstigen Inserate der Genossenschaften. Klare Empfehlung für alle in Zürich."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing (NUR NOCH EIN PRODUKT ANGEZEIGT) -->
+    <section id="pricing" class="py-16 sm:py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Wählen Sie Ihr Abo</h2>
+                <p class="mt-3 text-base sm:text-lg text-gray-600">Starten Sie noch heute und finden Sie Ihre Traumwohnung.</p>
+            </div>
+
+            <!-- Pricing Grid: Nur noch 1 Spalte in der Mitte (für gute Optik auf allen Geräten) -->
+            <div class="flex justify-center">
+                <!-- Abo 1: Monats-Abo (EINZIGES PRODUKT) -->
+                <div class="relative bg-white p-8 rounded-3xl shadow-2xl border-4 border-blue-500 transform w-full max-w-md transition duration-300">
+                    <!-- Badge, das auf mobile nicht zu gross ist -->
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg trust-badge">
+                        AKTUELL EINZIGES PAKET
+                    </div>
+                    <div class="text-center pt-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Monats-Abo</h3>
+                        <p class="text-sm text-gray-500">Volle Flexibilität</p>
+                        <p class="mt-4">
+                            <span class="text-5xl font-extrabold text-blue-600">CHF 9.90</span>
+                            <span class="text-gray-500"> / Monat</span>
+                        </p>
+                    </div>
+                    <ul class="mt-8 space-y-4 text-gray-700">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Monatliche E-Mail mit Inseraten</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Direktlinks zu allen Genossenschaften</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Jederzeit kündbar (keine automatische Verlängerung)</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Sie verwenden die ID `buy_btn_1SPkxb...`</li>
+                    </ul>
+                    
+                    <!-- NEUE STELLE FÜR STRIPE BUY BUTTON -->
+                    <div class="mt-10 w-full">
+                        <!-- STRIPE BUY BUTTON -->
+                        <stripe-buy-button
+                          buy-button-id="buy_btn_1SPkxbIOpfPR5vhTObxlJT8i"
+                          publishable-key="pk_live_51OYDE7IOpfPR5vhTGI68719ZhB0WgFhot1prvfSXHNO5SACjy1mIOPhk55K8MDJHyaP1TIrD1amK8x6uvujblG9x00SEYszg5q"
+                          class="w-full"
+                        >
+                        </stripe-buy-button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 sm:mt-16">
+                <p class="text-xs text-gray-500">
+                    Dieses Abo ist eine Einmalzahlung für einen Monat und verlängert sich nicht automatisch.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- HÄUFIG GESTELLTE FRAGEN (FAQ) SECTION -->
+    <section id="faq" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Häufig gestellte Fragen (FAQ)</h2>
+                <p class="mt-3 text-base sm:text-lg text-gray-600">Antworten auf die wichtigsten Fragen zu unserem Service</p>
+            </div>
+
+            <div class="space-y-4">
+
+                <!-- FAQ Item 1: Kündigung über Stripe -->
+                <div class="faq-item shadow-lg rounded-xl overflow-hidden border border-gray-200">
+                    <details>
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 bg-gray-50 p-4 transition duration-200 hover:bg-gray-100">
+                            <span>Kann ich mein Abonnement jederzeit kündigen?</span>
+                            <svg class="chevron h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="text-gray-700 p-4 pt-0">
+                            Ja, da es sich um eine Einmalzahlung handelt, erfolgt **keine automatische Verlängerung**. Sie müssen nicht kündigen. Ihr Zugang läuft am Ende des Monats automatisch aus.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 2: Zahlungsmethoden über Stripe -->
+                <div class="faq-item shadow-lg rounded-xl overflow-hidden border border-gray-200">
+                    <details>
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 bg-gray-50 p-4 transition duration-200 hover:bg-gray-100">
+                            <span>Welche Zahlungsmethoden werden akzeptiert?</span>
+                            <svg class="chevron h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="text-gray-700 p-4 pt-0">
+                            Wir akzeptieren alle gängigen Zahlungsmethoden, die **über unseren Zahlungsdienstleister Stripe** abgewickelt werden. Dazu gehören Kreditkarten (Visa, MasterCard, Amex), Twint und viele weitere lokale Methoden. Die Zahlungsinformationen werden von Stripe sicher und verschlüsselt verarbeitet.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 3: Geld-zurück-Garantie (14 Tage) -->
+                <div class="faq-item shadow-lg rounded-xl overflow-hidden border border-gray-200">
+                    <details>
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 bg-gray-50 p-4 transition duration-200 hover:bg-gray-100">
+                            <span>Bieten Sie eine Geld-zurück-Garantie?</span>
+                            <svg class="chevron h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="text-gray-700 p-4 pt-0">
+                            Ja, wir sind von der Qualität unseres Services überzeugt. Wir bieten eine **14-tägige Geld-zurück-Garantie** für alle Neukunden. Wenn Sie nicht zufrieden sind, erstatten wir Ihnen den vollen Betrag.
+                        </div>
+                    </details>
+                </div>
+                
+                <!-- FAQ Item 4: Wie aktuell sind die Inserate? -->
+                <div class="faq-item shadow-lg rounded-xl overflow-hidden border border-gray-200">
+                    <details>
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 bg-gray-50 p-4 transition duration-200 hover:bg-gray-100">
+                            <span>Wie aktuell sind die Inserate?</span>
+                            <svg class="chevron h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="text-gray-700 p-4 pt-0">
+                            Wir überwachen die Webseiten der Zürcher Genossenschaften täglich. Die monatliche E-Mail enthält die aktuellsten Inserate, oft innerhalb von 24 Stunden nach ihrer Veröffentlichung, um Ihnen einen entscheidenden Vorteil zu verschaffen.
+                        </div>
+                    </details>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Spalte 1: Logo (Text durch Bild ersetzt) -->
+                <div class="col-span-2 md:col-span-1 mb-6 md:mb-0">
+                    <img src="https://i.ibb.co/8kTQ8XK/Genossenschaft-Vermittler-20251104-142854-0000.png" 
+                         alt="Genossenschaft Vermittler Logo" 
+                         class="h-6 w-auto mb-2 filter brightness-150" loading="lazy">
+                    <p class="text-sm text-gray-400 mt-3">Ihr einfacher Weg zur günstigen Wohnung in Zürich.</p>
+                </div>
+                
+                <!-- Spalte 2: Navigation -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-3">Links</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#features" class="hover:text-blue-400 transition">Vorteile</a></li>
+                        <li><a href="#preview" class="hover:text-blue-400 transition">Vorschau</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-400 transition">Erfahrungen</a></li>
+                    </ul>
+                </div>
+
+                <!-- Spalte 3: Rechtliches -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-3">Rechtliches</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition">Impressum</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">AGB</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Spalte 4: Kontakt -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-3">Kontakt</h5>
+                    <p class="text-sm text-gray-400">E-Mail: <a href="mailto:info@beispiel.ch" class="hover:text-blue-400 transition">info@beispiel.ch</a></p>
+                    <p class="text-sm text-gray-400 mt-2">Zürich, Schweiz</p>
+                </div>
+            </div>
+            
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center">
+                <p class="text-sm text-gray-500">&copy; 2025 Genossenschaft Vermittler Zürich. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STUFE 1: STRIPE.JS UND BUY BUTTON SKRIPT LADEN -->
+    <!-- WICHTIG: Die Skripte MÜSSEN am Ende des Body platziert werden, um Timing-Fehler zu vermeiden, da das Buy Button Skript die DOM-Struktur benötigt. -->
+    <!-- Stripe.js für die allgemeine Funktionalität -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Das Buy Button Skript, wie gewünscht -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+</body>
+</html>
