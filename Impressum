@@ -13,6 +13,8 @@
         .content-card { min-height: 70vh; }
         /* Stil für den separaten Datenschutzlink, damit der Anker funktioniert */
         #datenschutzhinweis { padding-top: 6rem; margin-top: -6rem; }
+        /* Stil für den AGB Link */
+        #agb { padding-top: 6rem; margin-top: -6rem; }
     </style>
 </head>
 <body>
@@ -61,6 +63,29 @@
 
                 <h3 class="text-xl font-medium mt-4 mb-2">Externe Links:</h3>
                 <p class="text-gray-700">Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+            </section>
+
+            <hr class="my-8 border-gray-200">
+            
+            <!-- NEUER ABSCHNITT: ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB) -->
+            <section class="mb-8" id="agb">
+                <h2 class="text-2xl font-semibold">Allgemeine Geschäftsbedingungen (AGB)</h2>
+                
+                <h3 class="text-xl font-medium mt-4 mb-2">§ 1 Leistungsumfang und Eigenverantwortung des Kunden</h3>
+                <p class="text-gray-700 mb-4">
+                    Die Genossenschaft Vermittler bietet einen kuratierten Informationsdienst über verfügbare Genossenschaftswohnungen im Raum Zürich an. Die bereitgestellten Informationen (Inserate, Links, Kontaktdaten) dienen ausschliesslich der Orientierung des Kunden. Wir übernehmen keine Gewähr für die Richtigkeit, Aktualität oder Verfügbarkeit der Wohnungsinserate, da diese von Dritten (Genossenschaften) stammen.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Der Kunde ist für die eigenständige Kontaktaufnahme, die Bewerbung um eine Wohnung, die Durchführung von Besichtigungen sowie den Abschluss des Mietvertrages mit der jeweiligen Genossenschaft selbst verantwortlich. Die Genossenschaft Vermittler ist nicht Partei des Mietvertrages und übernimmt keinerlei Haftung für das Zustandekommen oder die Konditionen des Mietverhältnisses.
+                </p>
+
+                <h3 class="text-xl font-medium mt-4 mb-2">§ 2 Abonnement und Kündigung</h3>
+                <p class="text-gray-700 mb-4">
+                    Der Vertrag über den Informationsdienst wird monatlich abgeschlossen. Das Abonnement läuft jeweils für einen Monat ab dem Tag des Kaufs und verlängert sich nicht automatisch (Einmalzahlung). 
+                </p>
+                <p class="text-gray-700">
+                    Eine separate Kündigung ist somit nicht erforderlich. Bei der Bezahlung über Stripe kann der Kunde den Status seines Abonnements jederzeit über das von Stripe bereitgestellte Kundenportal einsehen und verwalten.
+                </p>
             </section>
 
             <hr class="my-8 border-gray-200">
